@@ -10,8 +10,6 @@ WORKDIR /home/build
 RUN yaourt -Syy ; \
   yaourt -S --noconfirm postgresql 
   
-RUN cat /etc/passwd
-  
 USER postgres
 WORKDIR /home/postgres
 VOLUME [/var/lib/postgres/data]
@@ -43,7 +41,3 @@ ENV USERNAME=username
 ENV PASSWORD=password
 
 ENTRYPOINT ./entry_point.sh
-#psql --command "create role toto superuser createdb createrole inherit login password 'kotya'; "
-# postgres -i -e -D /var/lib/postgres/data/ &
-
-#CMD /bin/bash
