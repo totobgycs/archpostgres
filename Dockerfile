@@ -4,9 +4,6 @@ MAINTAINER totobgycs
 RUN useradd -m postgres
 RUN echo "postgres ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-USER build
-WORKDIR /home/build
-
 RUN yaourt -Syy ; \
   yaourt -S --noconfirm postgresql 
   
